@@ -1,0 +1,13 @@
+my new work is here 
+import com.atlassian.jira.component.ComponentAccessor;
+ 
+/* The object facade class */
+Class objectFacadeClass = ComponentAccessor.getPluginAccessor().getClassLoader().findClass("com.riadalabs.jira.plugins.insight.channel.external.api.facade.ObjectFacade"); 
+ 
+/* The reference to the object facade which you can use in your code */
+def objectFacade = ComponentAccessor.getOSGiComponentInstanceOfType(objectFacadeClass);
+ 
+/* Log the Insight object */
+log.info("Insight object of key SCH-1: " + objectFacade.loadObjectBean("SCH-1"));
+ 
+return true;
